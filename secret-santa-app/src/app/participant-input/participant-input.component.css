@@ -1,0 +1,49 @@
+.participant-input-container {
+    text-align: center;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px 0;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.participant-list {
+    margin-top: 20px;
+}
+.participant-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+.participant-card h4 {
+    margin: 0;
+    font-size: 18px;
+}
+.participant-card p {
+    margin: 5px 0 0;
+    color: #555;
+}
