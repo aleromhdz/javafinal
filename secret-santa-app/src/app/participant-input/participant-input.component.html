@@ -1,6 +1,7 @@
 <div class="participant-input-container">
+    <div class="form-section">
     <h2>Add Participants</h2>
-    <input
+  <input
     type="text"
     placeholder="Name"
     [(ngModel)]="name"
@@ -18,16 +19,24 @@
     [(ngModel)]="nickname"
     />
     <button (click)="addParticipant()">Add Participant</button>
-
-    <div *ngIf="participants.length > 0 " class="participant-list">
-        <h3>Participants:</h3>
-    <div *ngFor="let participant of participants" class="participant-card">
-        <h4>{{ participant.name }} ({{ participant.lastNameLetter }})</h4>
-        <p> Nickname: {{ participant.nickname }}</p>
     </div>
-</div>
+    <p *ngIf="duplicateParticipantError" class="error-message">
+      This participant already exists!
+    </p>
 
-<button *ngIf="participants.length > 0" (click)="finishList()"> Finish List</button>
+    <div class="list-section">
+        <h3>Participants:</h3>
+        <div *ngIf="participants.length > 0 " class="participant-list">
+            <div *ngFor="let participant of participants; let i = index" class="participant-card">
+                <div class="card-header">
+                <h4>{{ participant.name }} {{ participant.lastNameLetter }} ({{ participant.nickname }})</h4>
+              <button class="remove-btn" (click)="removeParticipant(i)">x</button>
+            </div>
+        </div>
+    </div>
+
+    <button *ngIf="participants.length > 0" (click)="finishList()"> Finish List</button>
+  </div>
 </div>
 
 
